@@ -1,5 +1,4 @@
 import json
-import re
 import string
 
 
@@ -7,7 +6,6 @@ class TxtParser:
     """
     For use parsing .txt files.
     """
-    SPECIAL_CHARACTERS = """!()-[]{};:'"\,<>./?@#$%^&*_~"""
 
     @classmethod
     def parseWordFrequencyToJson(cls, pathToTxtFile: str, pathToSaveTo: str) -> None:
