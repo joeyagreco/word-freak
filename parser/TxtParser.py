@@ -22,6 +22,9 @@ class TxtParser:
                     else:
                         wordFrequency[word] = 1
 
+        # sort word frequencies by number of occurrences
+        orderedWordFreq = dict(sorted(wordFrequency.items(), reverse=True, key=lambda item: item[1]))
+
         # save all word frequencies to .json file
         with open(pathToSaveTo, "w+") as file:
-            json.dump(wordFrequency, file)
+            json.dump(orderedWordFreq, file)
