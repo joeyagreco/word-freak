@@ -1,17 +1,15 @@
-import textract
+import docx2txt
 
 from src.parser.Parser import Parser
 
 
-class DocParser(Parser):
+class DocxParser(Parser):
     """
-    For use parsing .doc files.
+    For use parsing .docx files.
     """
 
     @classmethod
     def getWordFrequency(cls, pathToPdfFile: str) -> dict[str, int]:
         # get all word frequencies from the given .docx file
-        byteLines = textract.process(pathToPdfFile).split()
-        # convert bytes to strings
-        lines = [byteLine.decode("utf-8") for byteLine in byteLines]
+        lines = docx2txt.process(pathToPdfFile).split()
         return cls._getWordFrequencyFromLines(lines)

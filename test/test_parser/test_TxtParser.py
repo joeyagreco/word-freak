@@ -1,15 +1,15 @@
 import os
 import unittest
 
-from src.parser.DocParser import DocParser
+from src.parser.TxtParser import TxtParser
 
 
-class TestDocParser(unittest.TestCase):
+class TestTxtParser(unittest.TestCase):
     PATH_TO_TEST_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "files", "parser"))
 
-    def test_getWordFrequency_docFile_happyPath(self):
-        docxFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.doc")
-        wf = DocParser.getWordFrequency(docxFilePath)
+    def test_getWordFrequency_txtFile_happyPath(self):
+        docxFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.txt")
+        wf = TxtParser.getWordFrequency(docxFilePath)
         self.assertIsInstance(wf, dict)
         self.assertEqual(6, len(wf.keys()))
         self.assertEqual(2, wf["hello"])
