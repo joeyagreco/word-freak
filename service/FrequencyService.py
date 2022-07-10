@@ -14,7 +14,7 @@ class FrequencyService:
     @classmethod
     def extractWordFrequencies(cls, inputFilePath: str, outputFilePath: str) -> None:
         """
-        Takes a file and save all word frequencies to a JSON file.
+        Takes a file and saves all word frequencies to a JSON file.
         """
 
         if inputFilePath.lower().endswith(cls.TXT_FILE_EXTENSION):
