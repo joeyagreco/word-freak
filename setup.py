@@ -8,7 +8,7 @@ with open("LICENSE") as f:
 
 setuptools.setup(
     name="wordfreak",
-    version="0.0.7",
+    version="0.0.8",
     author="Joey Greco",
     author_email="joeyagreco@gmail.com",
     description="",
