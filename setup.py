@@ -8,13 +8,11 @@ with open("LICENSE") as f:
 
 setuptools.setup(
     name="wordfreak",
+    version="0.0.2",
     author="Joey Greco",
     author_email="joeyagreco@gmail.com",
     description="",
     long_description=readme,
     license=license,
-    packages=setuptools.find_packages(exclude=("test", "docs")),
-    use_incremental=True,
-    setup_requires=['incremental'],
-    install_requires=['incremental']
+    packages=setuptools.find_packages(exclude=("test", "docs"))
 )
