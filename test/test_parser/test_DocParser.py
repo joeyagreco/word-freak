@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from src.parser.DocParser import DocParser
+from src.wordfreak.parser.DocParser import DocParser
 
 
 class TestDocParser(unittest.TestCase):

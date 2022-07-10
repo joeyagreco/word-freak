@@ -1,9 +1,9 @@
 import json
 
-from src.parser.DocParser import DocParser
-from src.parser.DocxParser import DocxParser
-from src.parser.PdfParser import PdfParser
-from src.parser.TxtParser import TxtParser
+from src.wordfreak.parser.DocParser import DocParser
+from src.wordfreak.parser.DocxParser import DocxParser
+from src.wordfreak.parser.PdfParser import PdfParser
+from src.wordfreak.parser.TxtParser import TxtParser
 
 
 class FrequencyService:

@@ -1,6 +1,6 @@
 from PyPDF2 import PdfReader
 
-from src.parser.Parser import Parser
+from src.wordfreak.parser.Parser import Parser
 
 
 class PdfParser(Parser):

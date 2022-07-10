@@ -1,6 +1,6 @@
 import textract
 
-from src.parser.Parser import Parser
+from src.wordfreak.parser.Parser import Parser
 
 
 class DocParser(Parser):

@@ -1,6 +1,6 @@
 import docx2txt
 
-from src.parser.Parser import Parser
+from src.wordfreak.parser.Parser import Parser
 
 
 class DocxParser(Parser):
