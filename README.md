@@ -18,7 +18,7 @@ pip install wordfreak
 ```python
 import wordfreak
 
-# Saves word frequencies from 'inputFile.txt' to 'outputFile.json'
+# Extracts word frequencies from 'inputFile.txt' and saves them to 'outputFile.json'
 wordfreak.extractWordFrequencies("C:\\inputFile.txt", "C:\\outputFile.json")
 ```
 
