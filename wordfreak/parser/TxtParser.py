@@ -1,4 +1,4 @@
-from src.wordfreak.parser.Parser import Parser
+from wordfreak.parser.Parser import Parser
 
 
 class TxtParser(Parser):

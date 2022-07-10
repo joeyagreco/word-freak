@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from src.wordfreak.parser.TxtParser import TxtParser
+from wordfreak.parser.TxtParser import TxtParser
 
 
 class TestTxtParser(unittest.TestCase):

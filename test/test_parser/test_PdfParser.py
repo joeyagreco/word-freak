@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from src.wordfreak.parser.PdfParser import PdfParser
+from wordfreak.parser.PdfParser import PdfParser
 
 
 class TestPdfParser(unittest.TestCase):
