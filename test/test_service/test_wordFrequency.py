@@ -25,3 +25,15 @@ class TestWordFrequency(unittest.TestCase):
             self.assertEqual(1, wordFrequencies["is"])
             self.assertEqual(1, wordFrequencies["a"])
             self.assertEqual(1, wordFrequencies["test"])
+
+    def test_extractWordFrequencies_outputFilePathNotJson_raisesException(self):
+        txtFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.txt")
+        with self.assertRaises(ValueError) as context:
+            extractWordFrequencies(txtFilePath, "tmp.notjson")
+        self.assertEqual("Output file must be a .json file.", str(context.exception))
+
+    def test_extractWordFrequencies_inputFileIsNotSupportedFileType_raisesException(self):
+        with self.assertRaises(ValueError) as context:
+            extractWordFrequencies("bad.bad", "tmp.json")
+        self.assertEqual("Filetype not supported for parsing (tried to parse file at 'bad.bad').",
+                         str(context.exception))

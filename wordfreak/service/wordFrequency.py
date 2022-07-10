@@ -7,11 +7,18 @@ from wordfreak.parser.TxtParser import TxtParser
 
 def extractWordFrequencies(inputFilePath: str, outputFilePath: str) -> None:
     """
-    Takes a file and saves all word frequencies to a JSON file.
+    Takes a file path and saves all word frequencies to the given JSON file.
+
+    inputFilePath: Path to file to extract work frequencies from.
+    outputFilePath: Path to file to save word frequencies to (must be .json file).
     """
-    TXT_FILE_EXTENSION = ".txt"
-    PDF_FILE_EXTENSION = ".pdf"
     DOCX_FILE_EXTENSION = ".docx"
+    JSON_FILE_EXTENSION = ".json"
+    PDF_FILE_EXTENSION = ".pdf"
+    TXT_FILE_EXTENSION = ".txt"
+    
+    if not outputFilePath.lower().endswith(JSON_FILE_EXTENSION):
+        raise ValueError(f"Output file must be a .json file.")
 
     if inputFilePath.lower().endswith(TXT_FILE_EXTENSION):
         wordFrequencies = TxtParser.getWordFrequency(inputFilePath)
