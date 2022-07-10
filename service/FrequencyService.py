@@ -1,9 +1,12 @@
 import json
 
+from parser.PdfParser import PdfParser
 from parser.TxtParser import TxtParser
 
 
 class FrequencyService:
+    TXT_FILE_EXTENSION = ".txt"
+    PDF_FILE_EXTENSION = ".pdf"
 
     @classmethod
     def extractWordFrequencies(cls, inputFilePath: str, outputFilePath: str) -> None:
@@ -11,8 +14,12 @@ class FrequencyService:
         Takes a file and save all word frequencies to a JSON file.
         """
 
-        # TODO: check different file types here (.txt, .pdf, etc...)
-        wordFrequencies = TxtParser.getWordFrequency(inputFilePath)
+        if inputFilePath.lower().endswith(cls.TXT_FILE_EXTENSION):
+            wordFrequencies = TxtParser.getWordFrequency(inputFilePath)
+        elif inputFilePath.lower().endswith(cls.PDF_FILE_EXTENSION):
+            wordFrequencies = PdfParser.getWordFrequency(inputFilePath)
+        else:
+            raise ValueError(f"Filetype not supported for parsing (tried to parse file at '{inputFilePath}').")
 
         # sort word frequencies by number of occurrences
         orderedWordFreq = dict(sorted(wordFrequencies.items(), reverse=True, key=lambda item: item[1]))
