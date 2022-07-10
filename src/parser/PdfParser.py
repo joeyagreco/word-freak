@@ -1,6 +1,6 @@
 from PyPDF2 import PdfReader
 
-from parser.Parser import Parser
+from src.parser.Parser import Parser
 
 
 class PdfParser(Parser):

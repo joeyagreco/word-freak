@@ -1,8 +1,8 @@
 import json
 
-from parser.DocParser import DocParser
-from parser.PdfParser import PdfParser
-from parser.TxtParser import TxtParser
+from src.parser.DocParser import DocParser
+from src.parser.PdfParser import PdfParser
+from src.parser.TxtParser import TxtParser
 
 
 class FrequencyService:
