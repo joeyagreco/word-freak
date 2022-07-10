@@ -1,6 +1,5 @@
 import json
 
-from src.wordfreak.parser.DocParser import DocParser
 from src.wordfreak.parser.DocxParser import DocxParser
 from src.wordfreak.parser.PdfParser import PdfParser
 from src.wordfreak.parser.TxtParser import TxtParser
@@ -24,8 +23,6 @@ class FrequencyService:
             wordFrequencies = PdfParser.getWordFrequency(inputFilePath)
         elif inputFilePath.lower().endswith(cls.DOCX_FILE_EXTENSION):
             wordFrequencies = DocxParser.getWordFrequency(inputFilePath)
-        elif inputFilePath.lower().endswith(cls.DOC_FILE_EXTENSION):
-            wordFrequencies = DocParser.getWordFrequency(inputFilePath)
         else:
             raise ValueError(f"Filetype not supported for parsing (tried to parse file at '{inputFilePath}').")
 
