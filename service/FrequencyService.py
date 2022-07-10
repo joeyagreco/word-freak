@@ -1,5 +1,6 @@
 import json
 
+from parser.DocParser import DocParser
 from parser.PdfParser import PdfParser
 from parser.TxtParser import TxtParser
 
@@ -7,6 +8,8 @@ from parser.TxtParser import TxtParser
 class FrequencyService:
     TXT_FILE_EXTENSION = ".txt"
     PDF_FILE_EXTENSION = ".pdf"
+    WORD_OLD_FILE_EXTENSION = ".doc"
+    WORD_NEW_FILE_EXTENSION = ".docx"
 
     @classmethod
     def extractWordFrequencies(cls, inputFilePath: str, outputFilePath: str) -> None:
@@ -18,6 +21,9 @@ class FrequencyService:
             wordFrequencies = TxtParser.getWordFrequency(inputFilePath)
         elif inputFilePath.lower().endswith(cls.PDF_FILE_EXTENSION):
             wordFrequencies = PdfParser.getWordFrequency(inputFilePath)
+        elif inputFilePath.lower().endswith(cls.WORD_OLD_FILE_EXTENSION) or \
+                inputFilePath.lower().endswith(cls.WORD_NEW_FILE_EXTENSION):
+            wordFrequencies = DocParser.getWordFrequency(inputFilePath)
         else:
             raise ValueError(f"Filetype not supported for parsing (tried to parse file at '{inputFilePath}').")
 
