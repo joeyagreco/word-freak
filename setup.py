@@ -1,8 +1,5 @@
 import setuptools
 
-with open("README.md") as f:
-    readme = f.read()
-
 with open("LICENSE") as f:
     license = f.read()
 
@@ -11,8 +8,7 @@ setuptools.setup(
     version="0.0.8",
     author="Joey Greco",
     author_email="joeyagreco@gmail.com",
-    description="",
-    long_description=readme,
+    description="Word Freak is a Python library that extracts word frequencies from files.",
     license=license,
     packages=setuptools.find_packages(exclude=("test", "docs")),
     install_requires=["PyPDF2",
