@@ -1,15 +1,16 @@
-import json
 import string
 
+from parser.Parser import Parser
 
-class TxtParser:
+
+class TxtParser(Parser):
     """
     For use parsing .txt files.
     """
 
     @classmethod
-    def parseWordFrequencyToJson(cls, pathToTxtFile: str, pathToSaveTo: str) -> None:
-        # get all word frequencies from .txt file
+    def getWordFrequency(cls, pathToTxtFile: str) -> dict[str, int]:
+        # get all word frequencies from the given .txt file
         wordFrequency: dict[str, int] = dict()
         with open(pathToTxtFile) as file:
             for line in file:
@@ -21,10 +22,4 @@ class TxtParser:
                         wordFrequency[word] += 1
                     else:
                         wordFrequency[word] = 1
-
-        # sort word frequencies by number of occurrences
-        orderedWordFreq = dict(sorted(wordFrequency.items(), reverse=True, key=lambda item: item[1]))
-
-        # save all word frequencies to .json file
-        with open(pathToSaveTo, "w+") as file:
-            json.dump(orderedWordFreq, file)
+        return wordFrequency
