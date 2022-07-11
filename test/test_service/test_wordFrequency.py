@@ -41,6 +41,12 @@ class TestWordFrequency(unittest.TestCase):
         self.assertEqual(1, response["a"])
         self.assertEqual(1, response["test"])
 
+    def test_extractWordFrequencies_frequenciesAreSortedBiggestToSmallest(self):
+        txtFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.txt")
+        response = extractWordFrequencies(txtFilePath)
+
+        self.assertEqual(str(sorted(response.values(), reverse=True)), str(list(response.values())))
+
     def test_extractWordFrequencies_outputFilePathNotJson_raisesException(self):
         txtFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.txt")
         with self.assertRaises(ValueError) as context:
