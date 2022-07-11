@@ -7,12 +7,12 @@ Word Freak is a Python library that extracts word frequencies from files.
 
 ## Supported File Types
 
-| File Extension | Explanation                       | Supported |
-|----------------|-----------------------------------|-----------|
-| .doc           | Microsoft Word document pre-2007  | ❌         |
-| .docx          | Microsoft Word document post-2007 | ✅         |
-| .pdf           | Portable Document Format          | ✅         |
-| .txt           | Plain text file                   | ✅         |
+| File Extension | Explanation                       | Supported          |
+|----------------|-----------------------------------|--------------------|
+| .doc           | Microsoft Word document pre-2007  | :x:                |
+| .docx          | Microsoft Word document post-2007 | :heavy_check_mark: |
+| .pdf           | Portable Document Format          | :heavy_check_mark: |
+| .txt           | Plain text file                   | :heavy_check_mark: |
 
 ## Installation
 
