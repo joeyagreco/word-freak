@@ -27,7 +27,7 @@ pip install wordfreak
 ```python
 import wordfreak
 
-# Take a text source and extract the word frequencies from it in order from most -> least occurring.
+# Takes a text source and extracts the word frequencies from it in order from most -> least occurring.
 # Extracts word frequencies from "inputFile.txt" and returns them as a Python dictionary.
 wordFrequencies = wordfreak.extractWordFrequencies("C:\\inputFile.txt")
 
