@@ -30,6 +30,7 @@ import wordfreak
 # Take a text source and extract the word frequencies from it in order from most -> least occurring.
 # Extracts word frequencies from "inputFile.txt" and returns them as a Python dictionary.
 wordFrequencies = wordfreak.extractWordFrequencies("C:\\inputFile.txt")
+
 # If an output file path is given, it will also save the results there as JSON.
 wordFrequencies = wordfreak.extractWordFrequencies("C:\\inputFile.txt", "C:\\outputFile.json")
 
