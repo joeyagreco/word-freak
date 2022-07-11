@@ -1,6 +1,8 @@
 import string
 from abc import abstractmethod, ABC
 
+from wordfreak.util.constants import PUNCTUATION
+
 
 class Parser(ABC):
 
@@ -16,7 +18,7 @@ class Parser(ABC):
             line = line.strip()
             words = line.split()
             for word in words:
-                word = word.translate(str.maketrans('', '', string.punctuation)).lower()
+                word = word.translate(str.maketrans('', '', f"{string.punctuation}{PUNCTUATION}")).lower()
                 # do not add empty strings
                 if word != "":
                     if word in wordFrequency:
