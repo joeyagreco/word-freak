@@ -3,6 +3,7 @@ import json
 from wordfreak.parser.DocxParser import DocxParser
 from wordfreak.parser.PdfParser import PdfParser
 from wordfreak.parser.TxtParser import TxtParser
+from wordfreak.util.constants import JSON_FILE_EXTENSION, TXT_FILE_EXTENSION, PDF_FILE_EXTENSION, DOCX_FILE_EXTENSION
 
 
 def extractWordFrequencies(inputFilePath: str, outputFilePath: str) -> None:
@@ -12,11 +13,7 @@ def extractWordFrequencies(inputFilePath: str, outputFilePath: str) -> None:
     inputFilePath: Path to file to extract work frequencies from.
     outputFilePath: Path to file to save word frequencies to (must be .json file).
     """
-    DOCX_FILE_EXTENSION = ".docx"
-    JSON_FILE_EXTENSION = ".json"
-    PDF_FILE_EXTENSION = ".pdf"
-    TXT_FILE_EXTENSION = ".txt"
-    
+
     if not outputFilePath.lower().endswith(JSON_FILE_EXTENSION):
         raise ValueError(f"Output file must be a .json file.")
 
@@ -35,3 +32,20 @@ def extractWordFrequencies(inputFilePath: str, outputFilePath: str) -> None:
     # save to JSON file
     with open(outputFilePath, "w+") as file:
         json.dump(orderedWordFreq, file)
+
+
+def pythonizeWordFrequencies(jsonFilePath: str) -> dict[str, int]:
+    """
+    Takes a file path to a JSON file that holds word frequencies and returns it as a Python dictionary.
+    After word frequencies have been extracted by extractWordFrequencies(), the resulting JSON file can be fed into this method to Pythonize.
+
+    jsonFilePath: Path to a file to Pythonize (must be .json file).
+    """
+    with open(jsonFilePath) as json_file:
+        wordFrequencies: dict = json.load(json_file)
+
+    # make sure this is a valid word frequencies file/dict
+    if not all(isinstance(count, int) for count in wordFrequencies.values()):
+        raise ValueError("Word Frequencies not formatted correctly, values must by type 'int'.")
+
+    return wordFrequencies

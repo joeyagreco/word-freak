@@ -3,7 +3,7 @@ import os
 import tempfile
 import unittest
 
-from wordfreak.service.wordFrequency import extractWordFrequencies
+from wordfreak.service.wordFrequency import extractWordFrequencies, pythonizeWordFrequencies
 
 
 class TestWordFrequency(unittest.TestCase):
@@ -37,3 +37,40 @@ class TestWordFrequency(unittest.TestCase):
             extractWordFrequencies("bad.bad", "tmp.json")
         self.assertEqual("Filetype not supported for parsing (tried to parse file at 'bad.bad').",
                          str(context.exception))
+
+    def test_pythonizeWordFrequencies_preFormattedJsonFile_happyPath(self):
+        jsonFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.json")
+        wordFrequencies = pythonizeWordFrequencies(jsonFilePath)
+        self.assertIsInstance(wordFrequencies, dict)
+        self.assertEqual(6, len(wordFrequencies.keys()))
+        self.assertTrue(isinstance(count, int) for count in wordFrequencies.values())
+        self.assertEqual(2, wordFrequencies["hello"])
+        self.assertEqual(2, wordFrequencies["world"])
+        self.assertEqual(1, wordFrequencies["this"])
+        self.assertEqual(1, wordFrequencies["is"])
+        self.assertEqual(1, wordFrequencies["a"])
+        self.assertEqual(1, wordFrequencies["test"])
+
+    def test_pythonizeWordFrequencies_freshlyFormattedJsonFile_happyPath(self):
+        txtFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test.txt")
+        with tempfile.TemporaryDirectory() as tempDir:
+            fullJsonPath = os.path.join(tempDir, "tmp.json")
+            extractWordFrequencies(txtFilePath, fullJsonPath)
+            wordFrequencies = pythonizeWordFrequencies(fullJsonPath)
+            self.assertIsInstance(wordFrequencies, dict)
+            self.assertEqual(6, len(wordFrequencies.keys()))
+            self.assertTrue(isinstance(count, int) for count in wordFrequencies.values())
+            self.assertEqual(2, wordFrequencies["hello"])
+            self.assertEqual(2, wordFrequencies["world"])
+            self.assertEqual(1, wordFrequencies["this"])
+            self.assertEqual(1, wordFrequencies["is"])
+            self.assertEqual(1, wordFrequencies["a"])
+            self.assertEqual(1, wordFrequencies["test"])
+
+    def test_pythonizeWordFrequencies_valuesNotAllInt_raisesException(self):
+        jsonFilePath = os.path.join(self.PATH_TO_TEST_DIR, "test2.json")
+        with tempfile.TemporaryDirectory() as tempDir:
+            with self.assertRaises(ValueError) as context:
+                pythonizeWordFrequencies(jsonFilePath)
+            self.assertEqual("Word Frequencies not formatted correctly, values must by type 'int'.",
+                             str(context.exception))
