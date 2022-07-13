@@ -2,7 +2,7 @@
     <img src="img/wordfreak_logo.png" alt="wordfreak logo" width="350"/>
 
 
-Word Freak is a Python library that extracts word frequencies from files.
+Wordfreak is a Python library that extracts word frequencies from files.
 
 ![Main Build](https://github.com/joeyagreco/wordfreak/actions/workflows/main-build.yml/badge.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/joeyagreco/wordfreak)
