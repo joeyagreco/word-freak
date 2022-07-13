@@ -7,6 +7,8 @@ Word Freak is a Python library that extracts word frequencies from files.
 ![Main Build](https://github.com/joeyagreco/wordfreak/actions/workflows/main-build.yml/badge.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/joeyagreco/wordfreak)
 
+</div>
+
 ## Supported File Types
 
 | File Extension | Explanation                       | Supported          |
@@ -16,7 +18,6 @@ Word Freak is a Python library that extracts word frequencies from files.
 | .pdf           | Portable Document Format          | :heavy_check_mark: |
 | .txt           | Plain text file                   | :heavy_check_mark: |
 
-</div>
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install..
