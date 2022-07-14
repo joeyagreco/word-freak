@@ -8,7 +8,7 @@ with open("LICENSE") as f:
 
 setuptools.setup(
     name="wordfreak",
-    version="0.0.12",
+    version="1.0.0",
     author="Joey Greco",
     author_email="joeyagreco@gmail.com",
     description="Word Freak is a Python library that extracts word frequencies from files.",
