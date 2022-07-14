@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="img/wordfreak_logo.png" alt="wordfreak logo" width="350"/>
+    <img src="https://raw.githubusercontent.com/joeyagreco/wordfreak/main/img/wordfreak_logo.png" alt="wordfreak logo" width="350"/>
 
 
 Wordfreak is a Python library that extracts word frequencies from files.
