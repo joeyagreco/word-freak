@@ -1,3 +1,2 @@
+from _version import __version__  # noqa
 from .service.wordFrequency import extractWordFrequencies, pythonizeWordFrequencies
-
-__version__ = "1.1.0"
