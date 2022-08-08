@@ -1,6 +1,8 @@
 import setuptools
 
-from _version import __version__ as version
+pkg_vars = dict()
+with open("wordfreak/_version.py") as f:
+    exec(f.read(), pkg_vars)
 
 with open("README.md") as f:
     readMe = f.read()
@@ -10,7 +12,7 @@ with open("LICENSE") as f:
 
 setuptools.setup(
     name="wordfreak",
-    version=version,
+    version=pkg_vars["__version__"],
     author="Joey Greco",
     author_email="joeyagreco@gmail.com",
     description="Word Freak is a Python library that extracts word frequencies from files.",
