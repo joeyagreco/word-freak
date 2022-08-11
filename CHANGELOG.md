@@ -10,6 +10,6 @@ All notable changes to this project will be documented in this file.
 
 ### Initial Release
 
-[Unreleased]: https://github.com/joeyagreco/sleeper/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/joeyagreco/wordfreak/compare/v2.0.0...HEAD
 
 [2.0.0]: https://github.com/joeyagreco/wordfreak/releases/tag/v2.0.0
