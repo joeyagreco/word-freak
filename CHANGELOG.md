@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 - Updated README
+- Made tests runnable via pytest
 
 ## [2.0.0]
 
