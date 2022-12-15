@@ -34,14 +34,14 @@ import wordfreak
 
 # Takes a text source and extracts the word frequencies from it in order from most -> least occurring.
 # Extracts word frequencies from "inputFile.txt" and returns them as a Python dictionary.
-wordFrequencies = wordfreak.extractWordFrequencies("C:\\inputFile.txt")
+wordFrequencies: dict = wordfreak.extractWordFrequencies("C:\\inputFile.txt")
 
 # If an output file path is given, it will also save the results there as JSON.
-wordFrequencies = wordfreak.extractWordFrequencies("C:\\inputFile.txt", "C:\\outputFile.json")
+wordFrequencies: dict = wordfreak.extractWordFrequencies("C:\\inputFile.txt", "C:\\outputFile.json")
 
 # Takes a saved word frequencies JSON file and converts it to a Python dictionary.
 # Loads word frequencies from "wordFrequencies.json" and returns them as a Python dictionary.
-wordFrequencies = wordfreak.pythonizeWordFrequencies("C:\\wordFrequencies.json")
+wordFrequencies: dict = wordfreak.pythonizeWordFrequencies("C:\\wordFrequencies.json")
 ```
 
 ## Running Tests
